@@ -201,29 +201,31 @@ char *getSVal(Tabla t, char *id){
 		return NULL;
 		
 	}
+}
 	
 int getType(Tabla t, char *id){
 		
 	  int i=0,bandera=0;
-	  Nodo aux= NULL;
-	  aux = t->inicial;
-	  while(bandera==0){
+	  Nodo n= NULL;
+	  n = t->inicial;
+	  while(i<t->length){
 	  	if(comparar(n->id,id)){
 	  		bandera = 1;
 	  		return n->tipo;
 	  	}
+	  	i++;
 	  }
 	  return 0;
 
 	}
-}
+
 
 int setIVal(Tabla t, char *id, int val){
 
 	  int i=0,bandera=0;
 	  Nodo n= NULL;
 	  n = t->inicial;
-	  while(bandera==0){
+	  while(i<t->length){
 	  	if(comparar(n->id,id)){
 	  		
 	  		n->contenido = 1;
@@ -231,6 +233,7 @@ int setIVal(Tabla t, char *id, int val){
 	  		
 	  		return 1;
 	  	}
+	  	i++;
 	  }
 	  return 0;
 
@@ -241,7 +244,7 @@ int setFVal(Tabla t, char *id, float val){
 	  int i=0,bandera=0;
 	  Nodo n= NULL;
 	  n = t->inicial;
-	  while(bandera==0){
+	  while(i<t->length){
 	  	if(comparar(n->id,id)){
 	  		
 	  		n->contenido = 1;
@@ -249,6 +252,7 @@ int setFVal(Tabla t, char *id, float val){
 	  		
 	  		return 1;
 	  	}
+	  	i++;
 	  }
 	  return 0;
 
@@ -258,7 +262,7 @@ int setSVal(Tabla t, char *id, char *val){
 	  int i=0,bandera=0;
 	  Nodo n= NULL;
 	  n = t->inicial;
-	  while(bandera==0){
+	  while(i<t->length){
 	  	if(comparar(n->id,id)){
 	  		
 	  		n->contenido = 1;
@@ -266,11 +270,12 @@ int setSVal(Tabla t, char *id, char *val){
 	  		
 	  		return 1;
 	  	}
+	  	i++;
 	  }
 	  return 0;
 
 	}
-}
+
 
 
 Tabla t;
@@ -647,10 +652,10 @@ estring: CADENA {$$ = $1;}
 int main(){
 		
 	yyparse();
-	
+	return 0;
 }
 
-yyerror(char *s){
+int yyerror(char *s){
 	printf("\n--%s--\n",s);
 }
 int yywrap(){

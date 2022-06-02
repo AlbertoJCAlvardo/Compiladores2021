@@ -1,5 +1,5 @@
 
-#line 3 "lex.yy.c"
+#line 2 "lex.yy.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -475,8 +475,8 @@ char *yytext;
 #include "gramatica.tab.h"
 
 
+#line 478 "lex.yy.c"
 #line 479 "lex.yy.c"
-#line 480 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -700,7 +700,7 @@ YY_DECL
 
 
 
-#line 704 "lex.yy.c"
+#line 703 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -883,7 +883,7 @@ YY_RULE_SETUP
 #line 95 "lexico.l"
 ECHO;
 	YY_BREAK
-#line 887 "lex.yy.c"
+#line 886 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
